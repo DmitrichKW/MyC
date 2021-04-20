@@ -10,7 +10,7 @@ namespace Lessons_1
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Hallo Word!");
+            Console.WriteLine("Hallo World!");
             Console.WriteLine("Привет мир!");
             Console.ReadKey();
         }
