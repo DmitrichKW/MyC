@@ -46,6 +46,6 @@ int main()
 		Map[key] = val;
 		val = 0;
 	}
-	cout << "В этом массиве" << endl;
+	cout << endl << "В этом массиве" << endl;
 	PrintMap(Map);
 }
