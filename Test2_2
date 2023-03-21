@@ -1,24 +1,51 @@
 #include <iostream>
+#include <map>
 #include <ctime>
 #include <random>
 
 using namespace std;
+
+int val = 0;
+
+void PrintMap(const map<int, int>& e) 
+{
+	for (auto item : e) 
+	{
+		cout << item.first << " : " << item.second << endl;
+	}
+}
 
 int main()
 {
 	srand(time(NULL));
 	setlocale(LC_ALL, "Russian");
 	cout << "Введите размер массива" << endl;
-	int* arr, N;
+	map<int, int> Map;
+	int* arr, N, key;
 	cin >> N;
-	arr = new int [N];
-	for (int i = 0;  i<N; i++) 
+	arr = new int[N];
+	for (int i = 0; i < N; i++)
 	{
 		arr[i] = rand() % 10;
 	}
-
-	for (int k = 0; k < N; k++) 
+	cout << "Массив чисел:" << endl;
+	for (int k = 0; k < N; k++)
 	{
 		cout << arr[k] << " ";
 	}
+	for (int j = 0; j < N; j++)
+	{
+		key = arr[j];
+		for (int g = 0; g < N; g++) 
+		{
+			if (key == arr[g])
+			{
+				val++;
+			}
+		}
+		Map[key] = val;
+		val = 0;
+	}
+	cout << "В этом массиве" << endl;
+	PrintMap(Map);
 }
